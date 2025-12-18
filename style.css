@@ -181,6 +181,10 @@ main {
     padding: 0px 12px;
   }
 
+  header {
+    margin: 40px 0;
+  }
+
   main {
     grid-template-columns: 1fr;
     grid-template-areas:
