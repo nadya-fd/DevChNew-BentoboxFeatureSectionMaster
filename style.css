@@ -55,13 +55,13 @@ main {
   padding: 24px;
 }
 
-section {
+.section {
   border-radius: 16px;
   background-color: #ffffff;
   padding: 32px;
 }
 
-section > h3 {
+.section > h3 {
   font-family: 'BeVietnamPro-SemiBold';
   font-size: 20px;
 }
@@ -75,10 +75,13 @@ section > h3 {
   gap: 24px;
 }
 
-.section1 img,
-.section2 img,
-.section3 img {
+.section img {
   align-self: center;
+}
+
+.section1 img,
+.section3 img {
+  order: 3;
 }
 
 .section1 {
@@ -105,7 +108,7 @@ section > h3 {
 .section5 {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
   grid-template-areas:
     'smallHeading img'
     'bodyText img';
@@ -129,7 +132,11 @@ section > h3 {
   grid-area: img;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) /* and (min-width: 641px) */ {
+  body {
+    padding: 0px 26px;
+  }
+
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -142,13 +149,13 @@ section > h3 {
   .section3 {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       'smallHeading img'
       'bodyText img';
     align-items: start;
     gap: 24px;
   }
+
   .section3 > .smallHeading {
     grid-area: smallHeading;
     align-self: end;
@@ -170,7 +177,26 @@ section > h3 {
 }
 
 @media (max-width: 640px) {
+  body {
+    padding: 0px 12px;
+  }
+
   main {
-    grid-template-columns: repeat(auto-fill, minmax(1fr));
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'section1'
+      'section2'
+      'section3'
+      'section4'
+      'section5';
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section img {
+    order: 0;
   }
 }
