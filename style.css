@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+p,
+h1,
+h3 {
+  line-height: 1.5;
+}
+
 @font-face {
   font-family: 'BeVietnamPro-Regular';
   src: url(resources/BeVietnamPro-Regular.ttf);
@@ -69,7 +75,7 @@ main {
 .section1,
 .section2,
 .section3 {
-  min-width: 368px;
+  min-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 24px;
